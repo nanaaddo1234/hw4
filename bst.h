@@ -267,6 +267,8 @@ template<class Key, class Value>
 BinarySearchTree<Key, Value>::iterator::iterator(Node<Key,Value> *ptr)
 {
     // TODO
+    current_ = ptr;
+
 }
 
 /**
@@ -276,6 +278,7 @@ template<class Key, class Value>
 BinarySearchTree<Key, Value>::iterator::iterator() 
 {
     // TODO
+    current_ = NULL;
 
 }
 
@@ -309,6 +312,12 @@ BinarySearchTree<Key, Value>::iterator::operator==(
     const BinarySearchTree<Key, Value>::iterator& rhs) const
 {
     // TODO
+    if(current_->value == rhs->value){
+      return true;
+    }
+    else{
+      return false;
+    }
 }
 
 /**
@@ -321,7 +330,12 @@ BinarySearchTree<Key, Value>::iterator::operator!=(
     const BinarySearchTree<Key, Value>::iterator& rhs) const
 {
     // TODO
-
+    if(current_->value != rhs->value){
+      return true;
+    }
+    else{
+      return false;
+    }
 }
 
 
@@ -333,6 +347,7 @@ typename BinarySearchTree<Key, Value>::iterator&
 BinarySearchTree<Key, Value>::iterator::operator++()
 {
     // TODO
+    current_ = current_++;
 
 }
 
@@ -356,12 +371,18 @@ template<class Key, class Value>
 BinarySearchTree<Key, Value>::BinarySearchTree() 
 {
     // TODO
+    root_ = NULL;
 }
 
 template<typename Key, typename Value>
 BinarySearchTree<Key, Value>::~BinarySearchTree()
 {
     // TODO
+    from (iterator:it = BinarySearchTree.begin();it != NULL; it = it->next){
+      std::BinarySearchTree<Key,Value>::iterator new = it;
+      delete new;
+    }
+    
 
 }
 
@@ -445,6 +466,13 @@ template<class Key, class Value>
 void BinarySearchTree<Key, Value>::insert(const std::pair<const Key, Value> &keyValuePair)
 {
     // TODO
+    if(keyValuePair <= root){
+    keyValuePair 
+
+    }
+    
+    
+
 }
 
 
@@ -499,6 +527,7 @@ template<typename Key, typename Value>
 Node<Key, Value>* BinarySearchTree<Key, Value>::internalFind(const Key& key) const
 {
     // TODO
+    
 }
 
 /**
